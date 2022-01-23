@@ -1,5 +1,4 @@
-const AddScores = () =>  {
-    return `<div class="col-md-6 col-sm-12">
+const AddScores = () => `<div class="col-md-6 col-sm-12">
             <div class="addContainer">
                 <h3 class="text-center">Add your score</h3>
                 <form method="post" id="addScoreForm" class="my-4">
@@ -15,6 +14,5 @@ const AddScores = () =>  {
                 </form>
             </div>
         </div>`;
-}
 
 export default AddScores;

@@ -59,7 +59,7 @@ footer {
   height: 50px;
   background: var(--accent-color);
   width: 100%;
-  padding: 10px 10px 0px 10px;
+  padding: 10px 10px 0 10px;
   bottom: 0;
   color: var(--white);
   text-align: center;
@@ -69,7 +69,7 @@ footer {
 
 ul {
   margin-top: 20px;
-  padding-left: 0px;
+  padding-left: 0;
   list-style: none;
   border: solid var(--accent-color);
   border-radius: 5px;
@@ -129,9 +129,9 @@ button[type="button"] {
 }
 
 .btn-primary:focus {
-    background: var(--accent-color);
-    border: none;
-    box-shadow: 0 0 10px var(--neutral-color-2);
+  background: var(--accent-color);
+  border: none;
+  box-shadow: 0 0 10px var(--neutral-color-2);
 }
 
 .btn-primary:hover {
