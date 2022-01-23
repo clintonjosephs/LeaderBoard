@@ -70,7 +70,7 @@ Once you completed this steps you should see the app running at: http://localhos
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://clintonjosephs.github.io/LeaderBoard/issues).
+Feel free to check the [issues page](https://github.com/clintonjosephs/LeaderBoard/issues).
 
 ## Show your support
 
