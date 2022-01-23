@@ -1,13 +1,14 @@
 import _ from 'lodash';
 import './style.css';
+import AddScores from './views/AddScore.js';
+import Footer from './views/Footer.js';
+import Modal from './views/Modal.js';
+import RecentScores from './views/RecentScores.js';
 
-function component() {
-    const element = document.createElement('div');
-  
-    // Lodash, now imported by this script
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  
-    return element;
-  }
-  
-  document.body.appendChild(component());
+const leaderContent = document.querySelector(".leaderboard-content");
+ 
+// update leaderboard content
+leaderContent.innerHTML = _ + RecentScores() + AddScores();
+
+//update body
+document.body.innerHTML += Modal() + Footer();
