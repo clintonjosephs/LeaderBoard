@@ -1,7 +1,6 @@
-import Medal from '../images/medal.jpg'
+import Medal from '../images/medal.jpg';
 
-const recentScores = () => {
-  return `<div class="col-md-6 col-sm-12">
+const recentScores = () => `<div class="col-md-6 col-sm-12">
             <div class="showScoresContainer">
                 <div class="scoresTop">       
                     <h3>Recent Scores</h3>           
@@ -25,6 +24,5 @@ const recentScores = () => {
             </ul>
             </div>
         </div>`;
-};
 
 export default recentScores;

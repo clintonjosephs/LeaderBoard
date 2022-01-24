@@ -1,5 +1,4 @@
-const ModalPopup = (title, body) => {
-    return `<div class="modal" tabindex="-1">
+const ModalPopup = (title, body) => `<div class="modal" tabindex="-1">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -11,7 +10,6 @@ const ModalPopup = (title, body) => {
         </div>
       </div>
     </div>
-  </div>`
-}
+  </div>`;
 
 export default ModalPopup;

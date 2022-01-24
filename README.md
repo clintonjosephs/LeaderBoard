@@ -10,7 +10,11 @@ Additional description about the project and its features.
 ## Built With
 
 - Major languages (HTML, CSS, JavaScript)
-- Frameworks (None)
+- Frameworks
+
+    ``` bash
+     - Bootstrap css framework
+    ```
 - Technologies used 
   
   ``` bash
@@ -54,7 +58,7 @@ $ npm run start # this will make webpack watching for your changes in code
 
 #### Open page in browser
 ```bash
-Once you completed this steps you should see the app running at: http://localhost:8080/ in your browser.
+$ open dist/index.html
 ```
 
 ## Authors
@@ -70,7 +74,7 @@ Once you completed this steps you should see the app running at: http://localhos
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://clintonjosephs.github.io/LeaderBoard/issues).
+Feel free to check the [issues page](https://github.com/clintonjosephs/LeaderBoard/issues).
 
 ## Show your support
 
