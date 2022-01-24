@@ -58,7 +58,7 @@ $ npm run start # this will make webpack watching for your changes in code
 
 #### Open page in browser
 ```bash
-Once you completed this steps you should see the app running at: http://localhost:8080/ in your browser.
+$ open dist/index.html
 ```
 
 ## Authors
