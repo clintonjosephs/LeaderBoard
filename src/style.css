@@ -16,16 +16,14 @@
   --neutral-color-1: #360732;
   --neutral-color-2: #d1afd3;
  */
- --primary-color-2: #CED2CC;
-  --primary-color-1: #D32D41;
-  --accent-color: #6AB187;
-  --neutral-color-1: #23282D;
-  --neutral-color-2: #1F3F49;
-  
- --white: #fff;
- --red: red;
- --font: "Poppins", sans-serif;
-
+  --primary-color-2: #ced2cc;
+  --primary-color-1: #d32d41;
+  --accent-color: #6ab187;
+  --neutral-color-1: #23282d;
+  --neutral-color-2: #1f3f49;
+  --white: #fff;
+  --red: red;
+  --font: "Poppins", sans-serif;
 }
 
 /* Global styles */
@@ -54,7 +52,7 @@ h1 {
 h1,
 h2 {
   color: var(--neutral-color-1);
-  font-weight:normal;
+  font-weight: normal;
 }
 
 h3 {
