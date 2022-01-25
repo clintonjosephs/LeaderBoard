@@ -6,7 +6,7 @@ const recentScores = () => {
             <div class="showScoresContainer">
                 <div class="scoresTop">       
                     <h3>Recent Scores</h3>           
-                    <button type="button" class="btn btn-primary">Refresh <i class="fas fa-sync-alt"></i>
+                    <button type="button" class="btn btn-primary refreshBtn">Refresh <i class="fas fa-sync-alt sync"></i>
                         <span class="spinner-border spinner-border-sm hide" id="recentScoreSpinner" role="status" aria-hidden="true"></span>
                     </button>
             </div>

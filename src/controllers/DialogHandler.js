@@ -3,6 +3,7 @@ import { Modal } from "bootstrap/dist/js/bootstrap.bundle.js";
 const toogleNotifier = (message, statusClass) => {
   const modalMessages = document.querySelector("#messages");
   const myModal = new Modal(modalMessages, {});
+  myModal.backdrop = false;
   const modalMsgBody = document.querySelector(".modal_messages_body");
   modalMsgBody.innerHTML = message;
   modalMsgBody.classList.remove("success", "faliure");
@@ -10,7 +11,7 @@ const toogleNotifier = (message, statusClass) => {
   myModal.show();
   setTimeout(() => {
     myModal.hide();
-  }, 1500);
+  }, 2000);
 };
 
 const setupFormModal = () => {

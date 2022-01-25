@@ -3,9 +3,17 @@ import Loader from "../images/loader.gif";
 const spinnerToogle = (spinnerId, displayStatus) => {
   const spinner = document.querySelector("#" + spinnerId);
   if (!displayStatus) {
+    if (spinnerId === "recentScoreSpinner") {
+        document.querySelector(".sync").classList.remove("hide");
+        document.querySelector(".sync").classList.add("show");
+    }
     spinner.classList.remove("show");
     spinner.classList.add("hide");
   } else {
+    if (spinnerId === "recentScoreSpinner") {
+        document.querySelector(".sync").classList.remove("show");
+        document.querySelector(".sync").classList.add("hide");
+    }
     spinner.classList.remove("hide");
     spinner.classList.add("show");
   }
@@ -28,7 +36,7 @@ const retrieveRecentScoresLoader = () => {
   loadingContent.appendChild(myLoader);
   loadingContent.appendChild(span);
   loader.style.visibility = "visible";
-  
+
   return loader;
 };
 

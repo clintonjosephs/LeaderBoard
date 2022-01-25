@@ -18,6 +18,7 @@ const startLeaderBoard = () => {
 const setGameTitle = (gameName) => {
   const gameNameSpan = document.querySelector(".gameName");
   gameNameSpan.innerHTML = gameName;
+  gameNameSpan.style.fontStyle = "italic";
 };
 
 export { startLeaderBoard, setGameTitle };

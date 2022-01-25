@@ -37,6 +37,7 @@ body {
 /* Main General styles */
 main {
   padding: 50px 10% 10px;
+  overflow-y: scroll;
 }
 
 h1 {
@@ -184,7 +185,7 @@ button[type="button"] {
   color: green;
 }
 
-.failue {
+.failure {
   color: red;
 }
 
