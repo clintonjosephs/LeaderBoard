@@ -1,5 +1,4 @@
-const modalMessages =
-  () => `<div class="modal fade" id="messages" tabindex="-1">
+const modalMessages = () => `<div class="modal fade" id="messages" tabindex="-1" data-backdrop="false">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -14,8 +13,7 @@ const modalMessages =
     </div>
   </div>`;
 
-const modalSetup = () => {
-  return `<div class="modal fade" id="setupFormModal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+const modalSetup = () => `<div class="modal fade" id="setupFormModal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -37,6 +35,5 @@ const modalSetup = () => {
         </div>
       </div>
     </div>`;
-};
 
 export { modalMessages, modalSetup };

@@ -30,7 +30,6 @@ body {
   font-family: var(--font);
   background: var(--primary-color-2);
   position: relative;
-  min-height: 97vh;
   transition: background ease-out 1s 0.1s;
 }
 
@@ -148,7 +147,7 @@ button[type="button"] {
 }
 
 .hide {
-  visibility: hidden;
+  display: none;
 }
 
 .medal {
@@ -157,7 +156,7 @@ button[type="button"] {
 }
 
 .show {
-  visibility: visible;
+  display:inline-block;
 }
 
 .loader {

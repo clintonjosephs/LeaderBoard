@@ -1,24 +1,22 @@
-import StorageManager from "../models/StorageManager.js";
-import { gameName, setGameIdName } from "../models/Utils.js";
-import { setupFormModal } from "./DialogHandler";
-import { retrieveRecentScoresLoader } from "./SpinnerHandler.js";
+import StorageManager from '../models/StorageManager.js';
+import { gameName, setGameIdName } from '../models/Utils.js';
+import { setupFormModal } from './DialogHandler.js';
+import { retrieveRecentScoresLoader } from './SpinnerHandler.js';
 
+const setGameTitle = (gameName) => {
+  const gameNameSpan = document.querySelector('.gameName');
+  gameNameSpan.innerHTML = gameName;
+  gameNameSpan.style.fontStyle = 'italic';
+};
 
 const startLeaderBoard = () => {
   const gameData = StorageManager.getData();
-   if (gameData.length === 0) {
+  if (gameData.length === 0) {
     return setupFormModal();
-   } else {
-     setGameIdName(gameData.gameID, gameData.gameName);
-     setGameTitle(gameName);
-     return retrieveRecentScoresLoader();
-   }
-};
-
-const setGameTitle = (gameName) => {
-  const gameNameSpan = document.querySelector(".gameName");
-  gameNameSpan.innerHTML = gameName;
-  gameNameSpan.style.fontStyle = "italic";
+  }
+  setGameIdName(gameData.gameID, gameData.gameName);
+  setGameTitle(gameName);
+  return retrieveRecentScoresLoader();
 };
 
 export { startLeaderBoard, setGameTitle };

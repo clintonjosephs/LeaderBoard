@@ -1,8 +1,7 @@
-import Medal from "../images/medal.jpg";
-import { ScoresData } from "../models/Utils.js";
+import Medal from '../images/medal.jpg';
+import { ScoresData } from '../models/Utils.js';
 
-const recentScores = () => {
-  return `<div class="col-md-6 col-sm-12">
+const recentScores = () => `<div class="col-md-6 col-sm-12">
             <div class="showScoresContainer">
                 <div class="scoresTop">       
                     <h3>Recent Scores</h3>           
@@ -18,13 +17,17 @@ const recentScores = () => {
             </ul>
             </div>
         </div>`;
-};
+
+const buildListView = (user = '', score = 'No Scores Available') => `<li>
+        <span>${user}: ${score}</span>
+        <img src="${Medal}" class="medal" alt="medal icon"/>
+    </li>`;
 
 const populateScoresList = () => {
   const dataLength = ScoresData.length;
-  const scoresView = document.querySelector(".scoresView");
+  const scoresView = document.querySelector('.scoresView');
 
-  let listScoresItems = "";
+  let listScoresItems = '';
 
   if (dataLength > 0) {
     ScoresData.forEach((data) => {
@@ -34,13 +37,6 @@ const populateScoresList = () => {
   } else {
     scoresView.innerHTML = buildListView();
   }
-};
-
-const buildListView = (user = "", score = "No Scores Available") => {
-  return `<li>
-        <span>${user}: ${score}</span>
-        <img src="${Medal}" class="medal" alt="medal icon"/>
-    </li>`;
 };
 
 export { recentScores, populateScoresList };
