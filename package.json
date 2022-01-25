@@ -1,5 +1,5 @@
 {
-  "name": "webpack-setup",
+  "name": "LeaderBoard",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -12,6 +12,10 @@
   "keywords": [],
   "author": "Clinton Mbonu",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/clintonjosephs/LeaderBoard/issues"
+  },
+  "homepage": "https://github.com/clintonjosephs/LeaderBoard#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.1.0",
@@ -35,6 +39,7 @@
     "stylelint-scss": "^3.21.0"
   },
   "dependencies": {
+    "bootstrap": "^5.1.3",
     "jest": "^27.4.7",
     "lodash": "^4.17.21"
   },

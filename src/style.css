@@ -10,22 +10,14 @@
 
 /* Variables */
 :root {
-  /* --primary-color-1: #dee0bc;
-  --primary-color-2: #dee0bc;
-  --accent-color: #9f4298;
-  --neutral-color-1: #360732;
-  --neutral-color-2: #d1afd3;
- */
- --primary-color-2: #CED2CC;
-  --primary-color-1: #D32D41;
-  --accent-color: #6AB187;
-  --neutral-color-1: #23282D;
-  --neutral-color-2: #1F3F49;
-  
- --white: #fff;
- --red: red;
- --font: "Poppins", sans-serif;
-
+  --primary-color-2: #e2f0f9;
+  --primary-color-1: #286fb4;
+  --accent-color: #b0dde4;
+  --neutral-color-1: #286fb4;
+  --neutral-color-2: #286fb4;
+  --white: #fff;
+  --red: red;
+  --font: "Poppins", sans-serif;
 }
 
 /* Global styles */
@@ -38,13 +30,14 @@ body {
   font-family: var(--font);
   background: var(--primary-color-2);
   position: relative;
-  min-height: 97vh;
   transition: background ease-out 1s 0.1s;
 }
 
 /* Main General styles */
 main {
   padding: 50px 10% 10px;
+  overflow-y: scroll;
+  min-height: 95vh;
 }
 
 h1 {
@@ -53,23 +46,21 @@ h1 {
 
 h1,
 h2 {
-  color: var(--neutral-color-1);
-  font-weight:normal;
+  color: var(--primary-color-1);
+  font-weight: normal;
 }
 
 h3 {
-  color: var(--neutral-color-1);
+  color: var(--primary-color-1);
   font-weight: normal;
 }
 
 footer {
-  position: fixed;
   height: 50px;
-  background: var(--neutral-color-2);
   width: 100%;
   padding: 10px 10px 0 10px;
   bottom: 0;
-  color: var(--white);
+  color: black;
   text-align: center;
 }
 
@@ -93,11 +84,17 @@ li {
   display: flex;
   justify-content: space-between;
   box-shadow: 0 0 10px var(--neutral-color-2);
+  transition: transform 1s, filter 0.5s ease-out;
+}
+
+li:hover {
+  transform: scale(1.03);
 }
 
 .form-control {
   height: 50px;
   border-left: solid 6px var(--accent-color);
+  text-transform: capitalize;
 }
 
 .form-control:focus {
@@ -148,6 +145,48 @@ button[type="button"] {
   box-shadow: 0 0 10px var(--neutral-color-2);
 }
 
+.hide {
+  display: none;
+}
+
+.medal {
+  width: 30px;
+  height: 30px;
+}
+
+.show {
+  display: inline-block;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(6px);
+  background: var(--neutral-color-1);
+  opacity: 0.8;
+  overflow-x: hidden;
+  transition: 0.5s;
+  visibility: hidden;
+}
+
+.loaderImg {
+  align-self: center;
+}
+
+.success {
+  color: green;
+}
+
+.failure {
+  color: red;
+}
+
 @media (min-width: 768px) {
   .showScoresContainer {
     width: 92%;
@@ -160,6 +199,6 @@ button[type="button"] {
 
 @media (max-width: 768px) {
   body {
-    min-height: 110vh;
+    min-height: 95vh;
   }
 }

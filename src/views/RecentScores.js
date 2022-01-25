@@ -4,25 +4,38 @@ const recentScores = () => `<div class="col-md-6 col-sm-12">
             <div class="showScoresContainer">
                 <div class="scoresTop">       
                     <h3>Recent Scores</h3>           
-                    <button type="button" class="btn btn-primary">Refresh <i class="fas fa-sync-alt"></i></button>
+                    <button type="button" class="btn btn-primary refreshBtn">Refresh <i class="fas fa-sync-alt sync"></i>
+                        <span class="spinner-border spinner-border-sm hide" id="recentScoreSpinner" role="status" aria-hidden="true"></span>
+                    </button>
             </div>
             <ul class="scoresView">
-                    <li>
-                        <span>Microverse: 23</span>
-                        <img src="${Medal}" width="30px" height="30px" alt="medal icon"/>
-                    </li>
-                    <li>
-                        <span>Clinton: 23</span>
-                        <img src="${Medal}" width="30px" height="30px" alt="medal icon"/>
-                    </li>
-                    <li>
-                        <span>
-                            Patrick: 23
-                        </span>
-                        <img src="${Medal}" width="30px" height="30px" alt="medal icon"/>
-                    </li>
+              <li>
+                  <span>No leaderboard scores added yet </span>
+                  <img src="${Medal}" class="medal" alt="medal icon"/>
+              </li>
             </ul>
             </div>
         </div>`;
 
-export default recentScores;
+const buildListView = (user = '', score = 'No Scores Available') => `<li>
+        <span>${user}: ${score}</span>
+        <img src="${Medal}" class="medal" alt="medal icon"/>
+    </li>`;
+
+const populateScoresList = (ScoresData) => {
+  const dataLength = ScoresData.length;
+  const scoresView = document.querySelector('.scoresView');
+
+  let listScoresItems = '';
+
+  if (dataLength > 0) {
+    ScoresData.forEach((data) => {
+      listScoresItems += buildListView(data.user, data.score);
+    });
+    scoresView.innerHTML = listScoresItems;
+  } else {
+    scoresView.innerHTML = buildListView();
+  }
+};
+
+export { recentScores, populateScoresList };
