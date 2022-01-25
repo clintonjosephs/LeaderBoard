@@ -10,11 +10,11 @@
 
 /* Variables */
 :root {
-  --primary-color-2: #ced2cc;
-  --primary-color-1: #d32d41;
-  --accent-color: #6ab187;
-  --neutral-color-1: #23282d;
-  --neutral-color-2: #1f3f49;
+  --primary-color-2: #e2f0f9;
+  --primary-color-1: #286fb4;
+  --accent-color: #b0dde4;
+  --neutral-color-1: #286fb4;
+  --neutral-color-2: #286fb4;
   --white: #fff;
   --red: red;
   --font: "Poppins", sans-serif;
@@ -45,19 +45,19 @@ h1 {
 
 h1,
 h2 {
-  color: var(--neutral-color-1);
+  color: var( --primary-color-1);
   font-weight: normal;
 }
 
 h3 {
-  color: var(--neutral-color-1);
+  color: var( --primary-color-1);
   font-weight: normal;
 }
 
 footer {
   position: fixed;
   height: 50px;
-  background: var(--neutral-color-2);
+  background: var(--primary-color-1);
   width: 100%;
   padding: 10px 10px 0 10px;
   bottom: 0;
@@ -95,6 +95,7 @@ li:hover {
 .form-control {
   height: 50px;
   border-left: solid 6px var(--accent-color);
+  text-transform: capitalize;
 }
 
 .form-control:focus {

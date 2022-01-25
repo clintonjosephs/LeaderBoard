@@ -10,7 +10,7 @@ const toogleNotifier = (message, statusClass) => {
   myModal.show();
   setTimeout(() => {
     myModal.hide();
-  }, 3000);
+  }, 1500);
 };
 
 const setupFormModal = () => {

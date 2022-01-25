@@ -8,6 +8,7 @@ import StorageManager from "../models/StorageManager.js";
 import { setGameTitle } from "./Starter.js";
 import { setScoreData } from "../models/Utils.js";
 import { populateScoresList } from "../views/RecentScores.js";
+import { toogleNotifier } from "./DialogHandler.js";
 
 const createGame = (setupForm, modal) => {
   // get value of the game title
@@ -36,10 +37,29 @@ const createGame = (setupForm, modal) => {
 
 const getScores = (loadingOverlay) => {
   getAllScores().then((data) => {
-    setScoreData(data.result);
+    const result = sortArray(data.result);
+    setScoreData(result);
     populateScoresList();
     loadingOverlay.style.visibility = "hidden";
   });
 };
 
-export { createGame, getScores };
+const uploadGameScores = (addForm) => {
+    let user = addForm[0].value;
+    user = user.charAt(0).toUpperCase() + user.slice(1);
+    const scores = addForm[1].value;
+     // show spinner
+    spinnerToogle("addScoreSpinner", true);
+    
+    uploadScores(user, scores).then((data) => {
+       toogleNotifier(data.result, "success");
+       spinnerToogle("addScoreSpinner", false);    
+       addForm.reset(); 
+    });
+};
+
+const sortArray = (data) => {
+    return data.sort((a, b) => b.score - a.score);
+}
+
+export { createGame, getScores, uploadGameScores };

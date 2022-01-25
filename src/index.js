@@ -4,7 +4,7 @@ import Footer from "./views/Footer.js";
 import { modalMessages, modalSetup } from "./views/Modals.js";
 import { recentScores } from "./views/RecentScores.js";
 import { startLeaderBoard } from "./controllers/Starter.js";
-import { createGame, getScores } from "./controllers/ServiceController.js";
+import { createGame, getScores, uploadGameScores } from "./controllers/ServiceController.js";
 
 const leaderContent = document.querySelector(".leaderboard-content");
 
@@ -15,6 +15,13 @@ leaderContent.innerHTML = recentScores() + AddScores();
 document.body.innerHTML += modalMessages() + modalSetup() + Footer();
 
 window.addEventListener("DOMContentLoaded", () => {
+  const addForm = document.querySelector("#addScoreForm");
+  addForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    uploadGameScores(addForm);
+  });
+
+
   //overlay object is either modal for new users or loading spinner for exisiting users
   const overlayObject = startLeaderBoard();
   if (overlayObject.className === undefined) {
@@ -26,4 +33,5 @@ window.addEventListener("DOMContentLoaded", () => {
   } else {
     getScores(overlayObject);
   }
+
 });
