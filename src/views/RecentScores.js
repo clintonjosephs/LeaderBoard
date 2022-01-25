@@ -1,5 +1,4 @@
 import Medal from '../images/medal.jpg';
-import { ScoresData } from '../models/Utils.js';
 
 const recentScores = () => `<div class="col-md-6 col-sm-12">
             <div class="showScoresContainer">
@@ -23,7 +22,7 @@ const buildListView = (user = '', score = 'No Scores Available') => `<li>
         <img src="${Medal}" class="medal" alt="medal icon"/>
     </li>`;
 
-const populateScoresList = () => {
+const populateScoresList = (ScoresData) => {
   const dataLength = ScoresData.length;
   const scoresView = document.querySelector('.scoresView');
 

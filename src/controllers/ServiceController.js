@@ -6,7 +6,6 @@ import {
 import { spinnerToogle } from './SpinnerHandler.js';
 import StorageManager from '../models/StorageManager.js';
 import { setGameTitle } from './Starter.js';
-import { setScoreData } from '../models/Utils.js';
 import { populateScoresList } from '../views/RecentScores.js';
 import { toogleNotifier } from './DialogHandler.js';
 
@@ -50,8 +49,7 @@ const getScores = () => getAllScores()
 const populateFirstTime = async (loadingOverlay) => {
   const scores = await getScores();
   const result = sortArray(scores.result);
-  setScoreData(result);
-  populateScoresList();
+  populateScoresList(result);
   loadingOverlay.style.visibility = 'hidden';
 };
 
@@ -59,8 +57,7 @@ const refreshList = async () => {
   spinnerToogle('recentScoreSpinner', true);
   const scores = await getScores();
   const result = sortArray(scores.result);
-  setScoreData(result);
-  populateScoresList();
+  populateScoresList(result);
   spinnerToogle('recentScoreSpinner', false);
   toogleNotifier('Scores retrieved successfully', 'success');
 };
