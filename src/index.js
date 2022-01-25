@@ -16,10 +16,11 @@ document.body.innerHTML += modalMessages() + modalSetup() + Footer();
 
 
 window.addEventListener('DOMContentLoaded',  () => {
-   const modal = startLeaderBoard();
+  //overlay object is either modal for new users or loading spinner for exisiting users
+   const overlayObject = startLeaderBoard();
    const setupForm = document.querySelector('#setupLeaderBoard');
    setupForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    createGame(setupForm, modal);
+    createGame(setupForm, overlayObject);
    });
 });

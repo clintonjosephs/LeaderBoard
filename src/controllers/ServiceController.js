@@ -3,8 +3,9 @@ import {
   getAllScores,
   uploadScores,
 } from "../models/Services.js";
-import spinnerToogle from "./SpinnerHandler.js";
+import { spinnerToogle } from "./SpinnerHandler.js";
 import StorageManager from "../models/StorageManager.js";
+import { setGameTitle } from "./Starter.js";
 
 const createGame = (setupForm, modal) => {
   // get value of the game title
@@ -25,6 +26,9 @@ const createGame = (setupForm, modal) => {
     spinnerToogle("setupSpinner", false);
     modal.hide();
     setupForm.reset();
+
+    //update gamename in dom
+    setGameTitle(gameName);
   });
 
 };

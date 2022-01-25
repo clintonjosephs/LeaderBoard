@@ -1,26 +1,23 @@
 import StorageManager from "../models/StorageManager.js";
+import { gameName, setGameIdName } from "../models/Utils.js";
 import { setupFormModal } from "./DialogHandler";
+import { retrieveRecentScoresLoader } from "./SpinnerHandler.js";
+
 
 const startLeaderBoard = () => {
-  const gameId = StorageManager.getData();
-   if (gameId.length === 0) {
+  const gameData = StorageManager.getData();
+   if (gameData.length === 0) {
     return setupFormModal();
    } else {
-     console.log('fetch recent scores');
+     setGameIdName(gameData.gameID, gameData.gameName);
+     setGameTitle(gameName);
+     return retrieveRecentScoresLoader();
    }
 };
 
-export { startLeaderBoard };
-// import Loader from "./images/loader.gif";
+const setGameTitle = (gameName) => {
+  const gameNameSpan = document.querySelector(".gameName");
+  gameNameSpan.innerHTML = gameName;
+};
 
-// const loadingContent = document.querySelector('.loaderImg');
-
-// const loader = document.querySelector('.loader');
-
-// //update loading image and set loading spinner in motion
-// // const myLoader = new Image();
-// // myLoader.src = Loader;
-// // myLoader.style.width = "150px";
-// // myLoader.style.height = "150px";
-// // loadingContent.appendChild(myLoader);
-// // loader.style.visibility = 'visible';
+export { startLeaderBoard, setGameTitle };

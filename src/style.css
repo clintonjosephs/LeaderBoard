@@ -163,7 +163,7 @@ button[type="button"] {
   top: 0;
   left: 0;
   backdrop-filter: blur(6px);
-  background: var(--primary-color-2);
+  background: var( --neutral-color-1);
   opacity: 0.8;
   overflow-x: hidden;
   transition: 0.5s;
