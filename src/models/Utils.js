@@ -9,4 +9,8 @@ const setGameIdName = (id, name) => {
     gameName = name; 
 }
 
-export { BaseUrl, contentType, ScoresData, gameID, gameName, setGameIdName }
+const setScoreData = (response) => {
+    ScoresData = response;
+}
+
+export { BaseUrl, contentType, ScoresData, gameID, gameName, setGameIdName, setScoreData }

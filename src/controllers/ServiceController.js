@@ -6,6 +6,8 @@ import {
 import { spinnerToogle } from "./SpinnerHandler.js";
 import StorageManager from "../models/StorageManager.js";
 import { setGameTitle } from "./Starter.js";
+import { setScoreData } from "../models/Utils.js";
+import { populateScoresList } from "../views/RecentScores.js";
 
 const createGame = (setupForm, modal) => {
   // get value of the game title
@@ -16,7 +18,7 @@ const createGame = (setupForm, modal) => {
 
   //call create game async function
   createNewGame(gameName).then((data) => {
-     // pass id of game to variable
+    // pass id of game to variable
     const gameID = data.result.substr(14, 20);
 
     //store game name and id to localstorage
@@ -30,7 +32,14 @@ const createGame = (setupForm, modal) => {
     //update gamename in dom
     setGameTitle(gameName);
   });
-
 };
 
-export { createGame };
+const getScores = (loadingOverlay) => {
+  getAllScores().then((data) => {
+    setScoreData(data.result);
+    populateScoresList();
+    loadingOverlay.style.visibility = "hidden";
+  });
+};
+
+export { createGame, getScores };

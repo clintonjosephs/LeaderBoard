@@ -85,6 +85,11 @@ li {
   display: flex;
   justify-content: space-between;
   box-shadow: 0 0 10px var(--neutral-color-2);
+  transition: transform 1s, filter 0.5s ease-out;
+}
+
+li:hover {
+  transform: scale(1.03);
 }
 
 .form-control {
@@ -163,7 +168,7 @@ button[type="button"] {
   top: 0;
   left: 0;
   backdrop-filter: blur(6px);
-  background: var( --neutral-color-1);
+  background: var(--neutral-color-1);
   opacity: 0.8;
   overflow-x: hidden;
   transition: 0.5s;

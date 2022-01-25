@@ -1,4 +1,4 @@
-import { BaseUrl, contentType } from './Utils.js';
+import { BaseUrl, contentType, gameID } from './Utils.js';
 
 const createNewGame = async (gameName) => {
     const response = await fetch(BaseUrl, {
@@ -9,16 +9,16 @@ const createNewGame = async (gameName) => {
     return response.json();
 };
 
- const getAllScores = async (gameId) => {
-    const response = await fetch(BaseUrl+`${gameId}`+'/scores/', {
+ const getAllScores = async () => {
+    const response = await fetch(BaseUrl+`${gameID}`+'/scores/', {
         method: 'GET',
         headers: contentType
     });
     return response.json();
 };
 
-const uploadScores = async (gameId, user, score) => {
-    const response = await fetch(BaseUrl+`${gameId}`+'/scores/', {
+const uploadScores = async (user, score) => {
+    const response = await fetch(BaseUrl+`${gameID}`+'/scores/', {
         method: 'POST',
         headers: contentType,
         body: JSON.stringify({"user": user, "score": score})
