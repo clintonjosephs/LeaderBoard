@@ -10,12 +10,6 @@
 
 /* Variables */
 :root {
-  /* --primary-color-1: #dee0bc;
-  --primary-color-2: #dee0bc;
-  --accent-color: #9f4298;
-  --neutral-color-1: #360732;
-  --neutral-color-2: #d1afd3;
- */
   --primary-color-2: #ced2cc;
   --primary-color-1: #d32d41;
   --accent-color: #6ab187;
@@ -144,6 +138,40 @@ button[type="button"] {
   background: var(--neutral-color-2);
   border: none;
   box-shadow: 0 0 10px var(--neutral-color-2);
+}
+
+.hide {
+  display: none;
+}
+
+.medal {
+  width: 30px;
+  height: 30px;
+}
+
+.show {
+  display: block;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(6px);
+  background: var(--primary-color-2);
+  opacity: 0.8;
+  overflow-x: hidden;
+  transition: 0.5s;
+  visibility: hidden;
+}
+
+.loaderImg {
+  align-self: center;
 }
 
 @media (min-width: 768px) {

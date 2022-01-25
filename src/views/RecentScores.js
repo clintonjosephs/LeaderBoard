@@ -1,28 +1,43 @@
-import Medal from '../images/medal.jpg';
+import Medal from "../images/medal.jpg";
+import { ScoresData } from "../models/Utils.js";
 
-const recentScores = () => `<div class="col-md-6 col-sm-12">
+const populateScoresList = () => {
+  const dataLength = ScoresData.length;
+  let listScoresItems = "";
+
+  if (dataLength > 0) {
+    ScoresData.forEach((data) => {
+      listScoresItems += buildListView(data.name, data.score, true);
+    });
+    return listScoresItems;
+  } else {
+    return buildListView();
+  }
+};
+
+const recentScores = () => {
+  return (
+    `<div class="col-md-6 col-sm-12">
             <div class="showScoresContainer">
                 <div class="scoresTop">       
                     <h3>Recent Scores</h3>           
-                    <button type="button" class="btn btn-primary">Refresh <i class="fas fa-sync-alt"></i></button>
+                    <button type="button" class="btn btn-primary">Refresh <i class="fas fa-sync-alt"></i>
+                        <span class="spinner-border spinner-border-sm hide" id="recentScoreSpinner" role="status" aria-hidden="true"></span>
+                    </button>
             </div>
-            <ul class="scoresView">
-                    <li>
-                        <span>Microverse: 23</span>
-                        <img src="${Medal}" width="30px" height="30px" alt="medal icon"/>
-                    </li>
-                    <li>
-                        <span>Clinton: 23</span>
-                        <img src="${Medal}" width="30px" height="30px" alt="medal icon"/>
-                    </li>
-                    <li>
-                        <span>
-                            Patrick: 23
-                        </span>
-                        <img src="${Medal}" width="30px" height="30px" alt="medal icon"/>
-                    </li>
-            </ul>
+            <ul class="scoresView">` +
+    populateScoresList() +
+    `</ul>
             </div>
-        </div>`;
+        </div>`
+  );
+};
+
+const buildListView = (data_name = "", data_score = "No Scores Available") => {
+  return `<li>
+        <span>${data_name}: ${data_score}</span>
+        <img src="${Medal}" class="medal" alt="medal icon"/>
+    </li>`;
+};
 
 export default recentScores;
