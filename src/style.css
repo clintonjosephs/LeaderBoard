@@ -46,12 +46,12 @@ h1 {
 
 h1,
 h2 {
-  color: var( --primary-color-1);
+  color: var(--primary-color-1);
   font-weight: normal;
 }
 
 h3 {
-  color: var( --primary-color-1);
+  color: var(--primary-color-1);
   font-weight: normal;
 }
 
@@ -155,7 +155,7 @@ button[type="button"] {
 }
 
 .show {
-  display:inline-block;
+  display: inline-block;
 }
 
 .loader {
