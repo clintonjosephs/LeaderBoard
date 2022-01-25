@@ -2,7 +2,7 @@ import { Modal } from 'bootstrap/dist/js/bootstrap.bundle.js';
 
 const toogleNotifier = (message, statusClass) => {
   const modalMessages = document.querySelector('#messages');
-  const notifyModal = new Modal(modalMessages, { backdrop: false });
+  const notifyModal = new Modal(modalMessages);
   const modalMsgBody = document.querySelector('.modal_messages_body');
   modalMsgBody.innerHTML = message;
   modalMsgBody.classList.remove('success', 'faliure');
