@@ -10,7 +10,7 @@ const recentScores = () => `<div class="col-md-6 col-sm-12">
             </div>
             <ul class="scoresView">
               <li>
-                  <span>: No Scores Available </span>
+                  <span>No leaderboard scores added yet </span>
                   <img src="${Medal}" class="medal" alt="medal icon"/>
               </li>
             </ul>

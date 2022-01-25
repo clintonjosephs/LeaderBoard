@@ -37,6 +37,7 @@ body {
 main {
   padding: 50px 10% 10px;
   overflow-y: scroll;
+  min-height: 95vh;
 }
 
 h1 {
@@ -55,13 +56,11 @@ h3 {
 }
 
 footer {
-  position: fixed;
   height: 50px;
-  background: var(--primary-color-1);
   width: 100%;
   padding: 10px 10px 0 10px;
   bottom: 0;
-  color: var(--white);
+  color: black;
   text-align: center;
 }
 
@@ -200,6 +199,6 @@ button[type="button"] {
 
 @media (max-width: 768px) {
   body {
-    min-height: 110vh;
+    min-height: 95vh;
   }
 }

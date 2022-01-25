@@ -1,8 +1,7 @@
 import StorageManager from './StorageManager.js';
 import { BaseUrl, contentType } from './Utils.js';
 
-const createNewGame = async () => {
-  const { gameName } = StorageManager.getData();
+const createNewGame = async (gameName) => {
   const response = await fetch(BaseUrl, {
     method: 'POST',
     headers: contentType,
