@@ -2,5 +2,5 @@ const BaseUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/
 const contentType = { 'content-type': 'application/json' };
 
 export {
-  BaseUrl, contentType
+  BaseUrl, contentType,
 };

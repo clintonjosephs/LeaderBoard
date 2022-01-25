@@ -2,7 +2,7 @@ import StorageManager from './StorageManager.js';
 import { BaseUrl, contentType } from './Utils.js';
 
 const createNewGame = async () => {
-  const gameName = StorageManager.getData().gameName;
+  const { gameName } = StorageManager.getData();
   const response = await fetch(BaseUrl, {
     method: 'POST',
     headers: contentType,
@@ -12,7 +12,7 @@ const createNewGame = async () => {
 };
 
 const getAllScores = async () => {
-  const gameID = StorageManager.getData().gameID;
+  const { gameID } = StorageManager.getData();
   const response = await fetch(`${BaseUrl}${gameID}/scores/`, {
     method: 'GET',
     headers: contentType,
@@ -21,7 +21,7 @@ const getAllScores = async () => {
 };
 
 const uploadScores = async (user, score) => {
-  const gameID = StorageManager.getData().gameID;
+  const { gameID } = StorageManager.getData();
   const response = await fetch(`${BaseUrl}${gameID}/scores/`, {
     method: 'POST',
     headers: contentType,
