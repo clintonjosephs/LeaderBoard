@@ -1,25 +1,25 @@
-import _ from 'lodash';
-import './style.css';
-import AddScores from './views/AddScore.js';
-import Footer from './views/Footer.js';
-import Modal from './views/Modal.js';
-import RecentScores from './views/RecentScores.js';
-import Loader from "./images/loader.gif";
+import "./style.css";
+import AddScores from "./views/AddScore.js";
+import Footer from "./views/Footer.js";
+import { modalMessages, modalSetup } from "./views/Modals.js";
+import RecentScores from "./views/RecentScores.js";
+import { startLeaderBoard } from "./controllers/Starter.js";
+import { createGame } from "./controllers/ServiceController.js"
 
-const leaderContent = document.querySelector('.leaderboard-content');
-const loadingContent = document.querySelector('.loaderImg');
-const loader = document.querySelector('.loader');
+const leaderContent = document.querySelector(".leaderboard-content");
 
-//update loading image and set loading spinner in motion
-// const myLoader = new Image();
-// myLoader.src = Loader;
-// myLoader.style.width = "150px";
-// myLoader.style.height = "150px";
-// loadingContent.appendChild(myLoader);
-// loader.style.visibility = 'visible';
-  
 // update leaderboard content
-leaderContent.innerHTML = _ + RecentScores() + AddScores();
+leaderContent.innerHTML = RecentScores() + AddScores();
 
 // update body
-document.body.innerHTML += Modal() + Footer();
+document.body.innerHTML += modalMessages() + modalSetup() + Footer();
+
+
+window.addEventListener('DOMContentLoaded',  () => {
+   const modal = startLeaderBoard();
+   const setupForm = document.querySelector('#setupLeaderBoard');
+   setupForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    createGame(setupForm, modal);
+   });
+});

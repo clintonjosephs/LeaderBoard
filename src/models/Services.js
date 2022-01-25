@@ -1,6 +1,6 @@
 import { BaseUrl, contentType } from './Utils.js';
 
-async const createNewGame = (gameName) => {
+const createNewGame = async (gameName) => {
     const response = await fetch(BaseUrl, {
         method: 'POST',
         headers: contentType,
@@ -9,7 +9,7 @@ async const createNewGame = (gameName) => {
     return response.json();
 };
 
-async const getAllScores = (gameId) => {
+ const getAllScores = async (gameId) => {
     const response = await fetch(BaseUrl+`${gameId}`+'/scores/', {
         method: 'GET',
         headers: contentType
@@ -17,9 +17,9 @@ async const getAllScores = (gameId) => {
     return response.json();
 };
 
-async const uploadScores = (gameId, user, score) => {
+const uploadScores = async (gameId, user, score) => {
     const response = await fetch(BaseUrl+`${gameId}`+'/scores/', {
-        method: 'GET',
+        method: 'POST',
         headers: contentType,
         body: JSON.stringify({"user": user, "score": score})
     });
@@ -28,4 +28,4 @@ async const uploadScores = (gameId, user, score) => {
 
 
 
-export { createNewGame, getAllScores, uploadScores}
+export { createNewGame, getAllScores, uploadScores }

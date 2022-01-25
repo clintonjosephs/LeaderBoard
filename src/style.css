@@ -141,7 +141,7 @@ button[type="button"] {
 }
 
 .hide {
-  display: none;
+  visibility: hidden;
 }
 
 .medal {
@@ -150,7 +150,7 @@ button[type="button"] {
 }
 
 .show {
-  display: block;
+  visibility: visible;
 }
 
 .loader {
@@ -172,6 +172,14 @@ button[type="button"] {
 
 .loaderImg {
   align-self: center;
+}
+
+.success {
+  color: green;
+}
+
+.failue {
+  color: red;
 }
 
 @media (min-width: 768px) {
