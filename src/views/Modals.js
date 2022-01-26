@@ -1,4 +1,4 @@
-const modalMessages = () => `<div class="modal fade" id="messages" tabindex="-1">
+const modalMessages = () => `<div class="modal fade" id="messages">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
