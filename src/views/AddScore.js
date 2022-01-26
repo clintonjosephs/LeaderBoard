@@ -9,7 +9,10 @@ const AddScores = () => `<div class="col-md-6 col-sm-12">
                         <input type="number" class="form-control" id="scoreField" placeholder="Add your score" maxlength="6" pattern="[0-9]+" required>
                     </div>
                     <div class="mb-3">
-                        <button type="submit" id="submitScore" class="btn btn-primary">Add Score</button>
+                        <button type="submit" id="submitScore" class="btn btn-primary">
+                            Add Score
+                            <span class="spinner-border spinner-border-sm hide" id="addScoreSpinner" role="status" aria-hidden="true"></span>
+                        </button>
                     </div>
                 </form>
             </div>
