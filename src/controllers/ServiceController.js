@@ -67,7 +67,7 @@ const refreshList = async (onAdd = false) => {
 };
 
 const uploadGameScores = (addForm) => {
-  let user = addForm[0].value;
+  let user = addForm[0].value.trim();
   const scores = addForm[1].value;
 
   const valid = validateInputs(user, scores);
@@ -76,13 +76,14 @@ const uploadGameScores = (addForm) => {
     spinnerToogle('addScoreSpinner', true);
     uploadScores(user, scores)
       .then((data) => {
-        toogleNotifier(data.result, 'success');
+        toogleNotifier(data.result, valid[2]);
         spinnerToogle('addScoreSpinner', false);
         addForm.reset();
         addForm[0].focus();
         refreshList(true);
       })
       .catch((error) => {
+        console.log('i hit here');
         toogleNotifier(error, 'failure');
       });
   } else {
