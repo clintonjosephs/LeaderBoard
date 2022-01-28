@@ -11,7 +11,7 @@ import { toogleNotifier } from './DialogHandler.js';
 
 const createGame = (setupForm, modal) => {
   const gameName = setupForm[0].value;
-  if (gameName.trim().length !== 0) {
+  if (gameName.trim().length >= 2) {
     spinnerToogle('setupSpinner', true);
     createNewGame(gameName)
       .then((data) => {
@@ -26,7 +26,14 @@ const createGame = (setupForm, modal) => {
         toogleNotifier(error, 'failure');
       });
   } else {
-    toogleNotifier("Game name cannot be empty", 'failure');
+    const createGameMsg = document.querySelector(".createGameMsg");
+    createGameMsg.classList.remove("hide");
+    createGameMsg.classList.add("add");
+    setupForm.reset();
+    setTimeout(() => {
+      createGameMsg.classList.remove("add");
+      createGameMsg.classList.add("hide");
+    }, 3000);
   }
   
 };
