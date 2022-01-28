@@ -76,7 +76,7 @@ const uploadGameScores = (addForm) => {
     spinnerToogle('addScoreSpinner', true);
     uploadScores(user, scores)
       .then((data) => {
-        toogleNotifier(data.result, 'success');
+        toogleNotifier(data.result, valid[2]);
         spinnerToogle('addScoreSpinner', false);
         addForm.reset();
         addForm[0].focus();
@@ -86,7 +86,7 @@ const uploadGameScores = (addForm) => {
         toogleNotifier(error, 'failure');
       });
   } else {
-    toogleNotifier(valid[1], 'failure');
+    toogleNotifier(valid[1], valid[2]);
   }
 };
 

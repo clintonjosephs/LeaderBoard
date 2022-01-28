@@ -5,7 +5,7 @@ const toogleNotifier = (message, statusClass) => {
   const notifyModal = new Modal(modalMessages, { backdrop: false });
   const modalMsgBody = document.querySelector('.modal_messages_body');
   modalMsgBody.innerHTML = message;
-  modalMsgBody.classList.remove('success', 'faliure');
+  modalMsgBody.classList.remove('success', 'failure');
   modalMsgBody.classList.add(statusClass);
   notifyModal.show();
   setTimeout(() => {
