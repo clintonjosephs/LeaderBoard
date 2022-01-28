@@ -17,6 +17,7 @@
   --neutral-color-2: #286fb4;
   --white: #fff;
   --red: red;
+  --green: green;
   --font: "Poppins", sans-serif;
 }
 
@@ -36,7 +37,7 @@ body {
 /* Main General styles */
 main {
   padding: 50px 10% 10px;
-  overflow-y: scroll;
+  overflow-y: auto;
   min-height: 95vh;
 }
 
@@ -73,7 +74,7 @@ ul {
   border: solid var(--accent-color);
   border-radius: 5px;
   max-height: 600px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 li {
@@ -179,12 +180,16 @@ button[type="button"] {
   align-self: center;
 }
 
+.createGameMsg {
+  color: var(--red);
+}
+
 .success {
-  color: green;
+  color: var(--green);
 }
 
 .failure {
-  color: red;
+  color: var(--red);
 }
 
 @media (min-width: 768px) {

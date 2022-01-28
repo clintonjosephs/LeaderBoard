@@ -1,4 +1,4 @@
-const modalMessages = () => `<div class="modal fade" id="messages" tabindex="-1">
+const modalMessages = () => `<div class="modal fade" id="messages">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -22,13 +22,16 @@ const modalSetup = () => `<div class="modal fade" id="setupFormModal" id="static
           <div class="modal-body">
            <form method="post" id="setupLeaderBoard" class="my-4">
               <div class="mb-3">
-                  <input type="text" class="form-control" id="gameName" placeholder="What's the name of your game" maxlength="20" required>
+                  <input type="text" class="form-control" id="gameName" placeholder="What's the name of your game (min 2 chars)" maxlength="20" required>
               </div>
               <div class="mb-3">
                   <button type="submit" id="submitSetup" class="btn btn-primary">
                       Get started
                       <span class="spinner-border spinner-border-sm hide" id="setupSpinner" role="status" aria-hidden="true"></span>
                   </button>
+              </div>
+              <div class="mb-3 hide createGameMsg">
+                  Name of game is required (min 2 chars)
               </div>
           </form>
           </div>
