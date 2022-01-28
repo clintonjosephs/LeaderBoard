@@ -8,6 +8,7 @@ import StorageManager from '../models/StorageManager.js';
 import { setGameTitle } from './Starter.js';
 import { populateScoresList } from '../views/RecentScores.js';
 import { toogleNotifier } from './DialogHandler.js';
+import validateInputs from './Validator.js';
 
 const createGame = (setupForm, modal) => {
   const gameName = setupForm[0].value;
@@ -26,16 +27,15 @@ const createGame = (setupForm, modal) => {
         toogleNotifier(error, 'failure');
       });
   } else {
-    const createGameMsg = document.querySelector(".createGameMsg");
-    createGameMsg.classList.remove("hide");
-    createGameMsg.classList.add("add");
+    const createGameMsg = document.querySelector('.createGameMsg');
+    createGameMsg.classList.remove('hide');
+    createGameMsg.classList.add('add');
     setupForm.reset();
     setTimeout(() => {
-      createGameMsg.classList.remove("add");
-      createGameMsg.classList.add("hide");
+      createGameMsg.classList.remove('add');
+      createGameMsg.classList.add('hide');
     }, 3000);
   }
-  
 };
 
 const sortArray = (data) => data.sort((a, b) => b.score - a.score);
@@ -59,8 +59,8 @@ const refreshList = async (onAdd = false) => {
   const result = sortArray(scores.result);
   populateScoresList(result);
   spinnerToogle('recentScoreSpinner', false);
-  const msg = result.length > 0  ? "Scores retrieved successfully" : "No scores added to leaderboard yet!";
-  const style = result.length > 0 ? 'success'  : "failure";
+  const msg = result.length > 0 ? 'Scores retrieved successfully' : 'No scores added to leaderboard yet!';
+  const style = result.length > 0 ? 'success' : 'failure';
   if (!onAdd) {
     toogleNotifier(msg, style);
   }
@@ -88,17 +88,7 @@ const uploadGameScores = (addForm) => {
   } else {
     toogleNotifier(valid[1], 'failure');
   }
-  
 };
-
-const validateInputs = (user, scores) => {
-  if (user.trim().length === 0 || user.trim().length > 15 || user.trim().length < 3) {
-    return [false, "Username should have between 3 - 15 characters"];
-  } else if (scores.length > 4) {
-    return [false, "Scores should not be greater than 9999"];
-  }
-  return [true, "input valid"];
-}
 
 export {
   createGame, populateFirstTime, uploadGameScores, refreshList,
