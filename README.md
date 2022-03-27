@@ -134,7 +134,7 @@ $ open dist/index.html
 
 - Location: Nigeria
 - GitHub: [@clintonjosephs](https://github.com/clintonjosephs)
-- Twitter: [@clintonmbonu_](https://twitter.com/clintonmbonu_)
+- Twitter: [@clintonmbonu2](https://twitter.com/clintonmbonu2)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/clinton-mbonu)
 
 ## 🤝 Contributing
